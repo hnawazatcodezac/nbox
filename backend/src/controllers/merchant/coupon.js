@@ -89,7 +89,6 @@ const getCoupons = async (req, res) => {
     });
   }
 };
-
 module.exports = {
   createCoupon,
   getCoupons,
