@@ -3,6 +3,7 @@ const router = Router();
 const {
   createCoupon,
   getCoupons,
+  getCouponDetails,
 } = require("../../controllers/merchant/coupon.js");
 const { verifyMerchantToken } = require("../../middlewares/authMiddleware.js");
 const { paramsValidator, bodyValidator } = require("../../middlewares/joi.js");
