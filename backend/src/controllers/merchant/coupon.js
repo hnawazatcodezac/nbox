@@ -92,6 +92,7 @@ const getCoupons = async (req, res) => {
 
 const getCouponDetails = async (req, res) => {
   const { couponId } = req.params;
+
   try {
     const coupon = await Coupon.findById(couponId).select(
       "_id name description active couponType minimumRequirement discountValue startDate endDate usageLimit usageCount"
