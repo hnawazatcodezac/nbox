@@ -4,8 +4,6 @@ const mongodbURL = configurations.mongoDbUrl;
 
 mongoose
   .connect(mongodbURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Mongodb connected successfully");

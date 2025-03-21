@@ -53,6 +53,12 @@ const {
 
 const { reviewBodySchema, reviewParamsSchema } = require("./joi/buyer/review");
 
+const {
+  couponBodySchema,
+  couponParamsSchema,
+  couponStatusBodySchema,
+} = require("./joi/merchant/coupon");
+
 module.exports = {
   buyerRegisterSchema,
   merchantRegisterSchema,
@@ -88,4 +94,7 @@ module.exports = {
   orderBodySchema,
   reviewBodySchema,
   reviewParamsSchema,
+  couponBodySchema,
+  couponParamsSchema,
+  couponStatusBodySchema,
 };
