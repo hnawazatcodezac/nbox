@@ -57,7 +57,7 @@ const {
   couponBodySchema,
   couponParamsSchema,
   couponStatusBodySchema,
-} = require("./joi/admin/coupon");
+} = require("./joi/merchant/coupon");
 
 module.exports = {
   buyerRegisterSchema,
