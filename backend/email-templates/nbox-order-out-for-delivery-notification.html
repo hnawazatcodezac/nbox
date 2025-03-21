@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Order is Out for Delivery!</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333">
+    <table width="100%" cellspacing="0" cellpadding="10">
+      <tr>
+        <td align="center">
+          <h2>📦 Your Order is Out for Delivery! 🚚</h2>
+          <p>Hello {{userName}},</p>
+          <p>
+            Great news! Your order is on its way and will be delivered soon. 🎉
+          </p>
+
+          <table
+            width="80%"
+            border="1"
+            cellspacing="0"
+            cellpadding="10"
+            style="border-collapse: collapse; margin: 20px auto"
+          >
+            <tr>
+              <td><strong>Order Number:</strong></td>
+              <td>{{orderID}}</td>
+            </tr>
+            <tr>
+              <td><strong>Delivery Address:</strong></td>
+              <td>{{userAddress}}</td>
+            </tr>
+            <tr>
+              <td><strong>Estimated Arrival:</strong></td>
+              <td>{{deliveryTime}}</td>
+            </tr>
+          </table>
+
+          <p>
+            You placed your order on <strong>{{orderDate}}</strong> from
+            <strong>{{storeName}}</strong> and paid a total of
+            <strong>{{orderTotal}}</strong>
+          </p>
+
+          <!-- FOOTER -->
+          <div class="footer">
+            Need help? Contact support at
+            <a href="mailto:support@example.com">support@example.com</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

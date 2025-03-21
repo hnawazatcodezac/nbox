@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Low Stock Alert</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #d9534f;
+      }
+      .product-list {
+        background: #f8d7da;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #888888;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Low Stock Alert</h2>
+      <p>Dear {{merchantName}},</p>
+      <p>The following products in your store have reached low stock levels:</p>
+
+      <div class="product-list">
+        <p><strong>Products:</strong></p>
+        <p>{{productList}}</p>
+      </div>
+
+      <p>Please restock these items as soon as possible to avoid stockouts.</p>
+
+      <div class="footer">
+        Need help? Contact our support team at
+        <a href="mailto:support@example.com">support@example.com</a>
+      </div>
+    </div>
+  </body>
+</html>

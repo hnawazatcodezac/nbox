@@ -1,0 +1,4258 @@
+{
+	"info": {
+		"_postman_id": "1cb12dc3-d1da-42be-8b34-c99156706c10",
+		"name": "NeoBox Merchant ApI Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28434436"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Agent",
+					"item": [
+						{
+							"name": "Create Agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"jhon\",\r\n    \"lastName\": \"doe\",\r\n    \"email\": \"jhonss@mailinator.com\",\r\n    \"phoneNumber\": \"928948982432\",\r\n    \"address\": \"i-10 islamabad, Pakistan\",\r\n    \"addressLatitude\": 90,\r\n    \"addressLongitude\": 180\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/agent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"jhon\",\r\n    \"lastName\": \"doe\",\r\n    \"phoneNumber\": \"928948982432\",\r\n    \"vehicleType\": \"car\",\r\n    \"availabilityStatus\": true,\r\n    \"address\": \"i-8, Faizabad islamabad, Pakistan\",\r\n    \"addressLatitude\": 45,\r\n    \"addressLongitude\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/agent/:agentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"agent",
+										":agentId"
+									],
+									"variable": [
+										{
+											"key": "agentId",
+											"value": "67c8cdf14203586302047dca"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Agents",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/agent/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"agent",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Update user status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/auth/status/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"auth",
+										"status",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "67c8cdf14203586302047dca"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/auth/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"auth",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "67ab5d1ce200bdf9826986d9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buyer",
+					"item": [
+						{
+							"name": "Create Buyer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"jhon\",\r\n    \"lastName\": \"doe\",\r\n    \"email\": \"jhonss@mailinator.com\",\r\n    \"phoneNumber\": \"928948982432\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/buyer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"buyer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Buyers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/buyer/all?page=1&pageSize=5&search=fost&status=active",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"buyer",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "search",
+											"value": "fost"
+										},
+										{
+											"key": "status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Buyer Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/buyer/:buyerId/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"buyer",
+										":buyerId",
+										"details"
+									],
+									"variable": [
+										{
+											"key": "buyerId",
+											"value": "67b6dc568f0dd0fcab64697a"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Created Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Admin Category\",\r\n    \"frName\": \"Admin Category\",\r\n    \"sort\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/category?search=category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "category"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Updated Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Admin category Upd\",\r\n    \"frName\": \"Admin category Upd\",\r\n    \"sort\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/category/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "67d4a5021c5502a24e05fdb7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deleted Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/category/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "67d4a5021c5502a24e05fdb7"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Get Orders Statistics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/orders?startDate=2025-03-02&endDate=2025-03-05",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-02"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-05"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sales Statistics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Active</th>\r",
+											"        <th>Completed</th>\r",
+											"        <th>Canceled</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    <tr>\r",
+											"        <td>{{response.data.active}}</td>\r",
+											"        <td>{{response.data.completed}}</td>\r",
+											"        <td>{{response.data.canceled}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/sales?startDate=2025-03-04&endDate=2025-03-04",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"sales"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-04"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-04"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Top Performing Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Active</th>\r",
+											"        <th>Completed</th>\r",
+											"        <th>Canceled</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    <tr>\r",
+											"        <td>{{response.data.active}}</td>\r",
+											"        <td>{{response.data.completed}}</td>\r",
+											"        <td>{{response.data.canceled}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/top-performing?startDate=2025-03-01&endDate=2025-03-05",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"top-performing"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-05"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Merchant",
+					"item": [
+						{
+							"name": "Get All Merchants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/merchant/all?page=1&pageSize=5&search=Juice",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"merchant",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "search",
+											"value": "Juice"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Store Attributes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attribute\": \"sponsored\",\r\n    \"value\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/merchant/attribute/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"merchant",
+										"attribute",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ab5d1ce200bdf9826986d9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Store Status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/merchant/status/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"merchant",
+										"status",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ab5d1ce200bdf9826986d9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Store Settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"storeName\": \"Hyperzod Store\",\r\n    \"storeEmail\": \"hyperzod@store.com\",\r\n    \"storePhoneNumber\": \"+1234567890\",\r\n    \"storeCustomText\": \"Everything is 10% off!\",\r\n    \"businessType\": \"distribution\",\r\n    \"status\": \"active\",\r\n    \"city\": \"Islamabad\",\r\n    \"state\": \"Islamabad\",\r\n    \"country\": \"Pakistan\",\r\n    \"postalCode\": \"489078\",\r\n    \"address\": \"i-8 markaz Faizabad, Islamabad\",\r\n    \"categories\": [\r\n        \"67d4acdd39941fceb9ac4f52\"\r\n    ],\r\n    \"latitude\": -73.935242,\r\n    \"longitude\": 40.73061,\r\n    \"commissionPercentage\": 10,\r\n    \"commissionFixed\": 0,\r\n    \"showMerchantContact\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/merchant/settings/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"merchant",
+										"settings",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ab5d1ce200bdf9826986d9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get All Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/order/all?page=1&pageSize=5&status=ready",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"order",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "status",
+											"value": "ready"
+										},
+										{
+											"key": "search",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Scheduled Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/order/scheduled?page=1&pageSize=5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"order",
+										"scheduled"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "search",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/order/:orderId/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"order",
+										":orderId",
+										"details"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c775d5ecf32d599ba9783f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"agentId\": \"67c8cdf14203586302047dca\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/order/:orderId/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"order",
+										":orderId",
+										"status"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c775d5ecf32d599ba9783f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "Create Site settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "siteTitle",
+											"value": "Title",
+											"type": "text"
+										},
+										{
+											"key": "siteTagline",
+											"value": "tagline",
+											"type": "text"
+										},
+										{
+											"key": "siteLogo",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/Service User 6.png"
+										},
+										{
+											"key": "siteFavicon",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/Service User 5.png"
+										},
+										{
+											"key": "pageTitle",
+											"value": "Page Title ",
+											"type": "text"
+										},
+										{
+											"key": "metaDescription",
+											"value": "Meta description",
+											"type": "text"
+										},
+										{
+											"key": "metaKeyword",
+											"value": "Meta Keywords",
+											"type": "text"
+										},
+										{
+											"key": "openGraphImage",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/Service User 6.png"
+										},
+										{
+											"key": "socialMediaLinks",
+											"value": "{\n    \"Facebook\": \"https://www.facebook.com/yourpage\",\n    \"Twitter\": \"https://twitter.com/yourhandle\",\n    \"LinkedIn\": \"https://www.linkedin.com/in/yourprofile\"\n  }",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site Settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "siteTitle",
+											"value": "NBOX",
+											"type": "text"
+										},
+										{
+											"key": "siteTagline",
+											"value": "Best Online Store",
+											"type": "text"
+										},
+										{
+											"key": "siteLogo",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/landing-page-logo-removebg-preview.png"
+										},
+										{
+											"key": "siteFavicon",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/bird-8788491_1280.jpg"
+										},
+										{
+											"key": "pageTitle",
+											"value": "Home Page",
+											"type": "text"
+										},
+										{
+											"key": "metaDescription",
+											"value": "Best marketplace for products",
+											"type": "text"
+										},
+										{
+											"key": "metaKeyword",
+											"value": "shopping, ecommerce, online store",
+											"type": "text"
+										},
+										{
+											"key": "openGraphImage",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/4f75fd0e-33d0-4aea-af7c-43efabcb8849.jpeg"
+										},
+										{
+											"key": "socialMediaLinks",
+											"value": "{\n    \"Facebook\": \"https://www.facebook.com/yourpage\",\n    \"Youtube\": \"https://twitter.com/yourhandle\",\n    \"LinkedIn\": \"https://www.linkedin.com/in/yourprofile\"\n  }",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Site API keys",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"apiKeys\": {\r\n        \"first\": \"xxxxxxxxx-xxxxxxxxxx\",\r\n        \"Second\": \"SKxxxx-xxx-xxxxx-xxxxx\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/setting/api-keys",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"setting",
+										"api-keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get site settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get SIte API keys",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/setting/api-keys",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"setting",
+										"api-keys"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Update status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{agentAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"action\": \"delivered\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/agent/order/status/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"agent",
+										"order",
+										"status",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c775d5ecf32d599ba9783f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Buyer",
+			"item": [
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Create Address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address\": \"Modi et in sed aut\",\r\n    \"addressLatitude\": 25,\r\n    \"addressLongitude\": 84,\r\n    \"addressType\": \"office\",\r\n    \"city\": \"Est ipsum cillum ips\",\r\n    \"country\": \"Sed rerum earum magn\",\r\n    \"isDefault\": false,\r\n    \"landmark\": \"Nostrum architecto e\",\r\n    \"landmarkLatitude\": 60,\r\n    \"landmarkLongitude\": 98,\r\n    \"postalCode\": \"48890\",\r\n    \"state\": \"Officia eum exercita\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Addresses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address\": \"Modi et in sed aut\",\r\n    \"addressLatitude\": 25,\r\n    \"addressLongitude\": 84,\r\n    \"addressType\": \"office\",\r\n    \"city\": \"Est ipsum cillum ips\",\r\n    \"country\": \"Sed rerum earum magn\",\r\n    \"isDefault\": false,\r\n    \"landmark\": \"Nostrum architecto e\",\r\n    \"landmarkLatitude\": 60,\r\n    \"landmarkLongitude\": 98,\r\n    \"postalCode\": \"48890\",\r\n    \"state\": \"Officia eum exercita\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/address/:addressId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"address",
+										":addressId"
+									],
+									"variable": [
+										{
+											"key": "addressId",
+											"value": "67cf7858408c184039895f8d"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Address to Default",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/address/:addressId/default",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"address",
+										":addressId",
+										"default"
+									],
+									"variable": [
+										{
+											"key": "addressId",
+											"value": "67cf7858408c184039895f8d"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/address/:addressId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"address",
+										":addressId"
+									],
+									"variable": [
+										{
+											"key": "addressId",
+											"value": "67cf7858408c184039895f8d"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Create Cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"67b42bbfa4597eb4030b3425\",\r\n    \"variantId\":\"67b461e6ae81c1344bb8658d\",\r\n    \"quantity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get cart of a store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get cart for all store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"67b42bbfa4597eb4030b3425\",\r\n    \"variantId\":\"67b461e6ae81c1344bb8658d\",\r\n    \"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/:cartId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										":cartId"
+									],
+									"variable": [
+										{
+											"key": "cartId",
+											"value": "67b819332f160d71a3360300"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/validate/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										"validate",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cart Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/cart/details/:merchantId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"cart",
+										"details",
+										":merchantId"
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get All Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/order/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"order",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/order/:orderId/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"order",
+										":orderId",
+										"details"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c775d5ecf32d599ba9783f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Re-Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/order/delivered/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"order",
+										"delivered",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c14ce97e0e1d6b965518a0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Get Product Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/product/:productId/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"product",
+										":productId",
+										"details"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "67b42c54a4597eb4030b3427"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "Add Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"review\": \"Very Good\",\r\n    \"rating\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/review/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"review",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c14ce97e0e1d6b965518a0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/review/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"review",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c14ce97e0e1d6b965518a0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"review\": \"Very Good\",\r\n    \"rating\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/review/:reviewId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"review",
+										":reviewId"
+									],
+									"variable": [
+										{
+											"key": "reviewId",
+											"value": "67c600921687eb4291c07307"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/review/:reviewId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"review",
+										":reviewId"
+									],
+									"variable": [
+										{
+											"key": "reviewId",
+											"value": "67c5fea2dec3a5fbf3144758"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Global Search",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/search/global?search=Juice&long=75.0372&lat=31.7292",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"search",
+										"global"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Juice"
+										},
+										{
+											"key": "long",
+											"value": "75.0372"
+										},
+										{
+											"key": "lat",
+											"value": "31.7292"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Local Store's Product Search",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/search/store/:merchantId/query?search=Juice",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"search",
+										"store",
+										":merchantId",
+										"query"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Juice"
+										}
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ac456535263d3152e06f7b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "Get all Stores",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/store?long=75.0372&lat=31.7292",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"store"
+									],
+									"query": [
+										{
+											"key": "long",
+											"value": "75.0372"
+										},
+										{
+											"key": "lat",
+											"value": "31.7292"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products of a store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{buyerAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/buyer/store/:merchantId?long=75.0372&lat=31.7292",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"buyer",
+										"store",
+										":merchantId"
+									],
+									"query": [
+										{
+											"key": "long",
+											"value": "75.0372"
+										},
+										{
+											"key": "lat",
+											"value": "31.7292"
+										}
+									],
+									"variable": [
+										{
+											"key": "merchantId",
+											"value": "67ab5d1ce200bdf9826986d9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Merchant",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Created Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Tech\",\r\n    \"frName\": \"Tech\",\r\n    \"sort\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/category?search=tech",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"category"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "tech"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Updated Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Tech\",\r\n    \"frName\": \"Tech\",\r\n    \"sort\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/category/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "67ac48cb89d5541dc2a80ab3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deleted Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/category/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "67ac48ba89d5541dc2a80aa1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Get Orders Statistics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/dashboard/orders?startDate=2025-03-02&endDate=2025-03-05",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"dashboard",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-02"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-05"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sales Statistics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Active</th>\r",
+											"        <th>Completed</th>\r",
+											"        <th>Canceled</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    <tr>\r",
+											"        <td>{{response.data.active}}</td>\r",
+											"        <td>{{response.data.completed}}</td>\r",
+											"        <td>{{response.data.canceled}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/dashboard/sales?startDate=2025-03-04&endDate=2025-03-04",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"dashboard",
+										"sales"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-04"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-04"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Top Performing Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Active</th>\r",
+											"        <th>Completed</th>\r",
+											"        <th>Canceled</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    <tr>\r",
+											"        <td>{{response.data.active}}</td>\r",
+											"        <td>{{response.data.completed}}</td>\r",
+											"        <td>{{response.data.canceled}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/dashboard/top-performing?startDate=2025-03-01&endDate=2025-03-05",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"dashboard",
+										"top-performing"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-03-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-03-05"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Labels",
+					"item": [
+						{
+							"name": "Created Label",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Tech\",\r\n    \"frName\": \"Tech\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/label",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Labels",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/label?search=label",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"label"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "label"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Updated Label",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"enName\": \"Pizza\",\r\n    \"frName\": \"Pizza\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/label/:labelId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"label",
+										":labelId"
+									],
+									"variable": [
+										{
+											"key": "labelId",
+											"value": "67b2bc3835f5c403e938095c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deleted Label",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/label/:labelId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"label",
+										":labelId"
+									],
+									"variable": [
+										{
+											"key": "labelId",
+											"value": "67aedf9dec3cf5c59265c7bc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get All Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/order/all?page=1&pageSize=5&status=preparing&search=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"order",
+										"all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "status",
+											"value": "preparing"
+										},
+										{
+											"key": "search",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Scheduled Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/order/scheduled?page=1&pageSize=5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"order",
+										"scheduled"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "search",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/order/:orderId/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"order",
+										":orderId",
+										"details"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c775d5ecf32d599ba9783f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"action\": \"cancel\"\r\n    // \"preparationTime\": 30\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/order/status/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"order",
+										"status",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "67c75a92ef0e2aff9e563968"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Get Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product?search=lang&page=1&pageSize=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "lang"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product/details/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product",
+										"details",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "67bf14817757df7df864e0cd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productImages",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/pexels-photo-708587.jpeg"
+										},
+										{
+											"key": "enName",
+											"value": "Maia Landry",
+											"type": "text"
+										},
+										{
+											"key": "frName",
+											"value": "Jenna Joyner",
+											"type": "text"
+										},
+										{
+											"key": "sku",
+											"value": "KKKKg-KK-k",
+											"type": "text"
+										},
+										{
+											"key": "enDescription",
+											"value": "<p>Rerum suscipit corpo.</p>",
+											"type": "text"
+										},
+										{
+											"key": "frDescription",
+											"value": "<p>Rerum suscipit corpo.</p>",
+											"type": "text"
+										},
+										{
+											"key": "categories",
+											"value": "67ac48cb89d5541dc2a80ab3,67b465e4d1d84d08d40d75c9",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1.1",
+											"type": "text"
+										},
+										{
+											"key": "costPrice",
+											"value": "5.1",
+											"type": "text"
+										},
+										{
+											"key": "compareAtPrice",
+											"value": "48.2",
+											"type": "text"
+										},
+										{
+											"key": "chargeTax",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "chargeTaxValue",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "in-active",
+											"type": "text"
+										},
+										{
+											"key": "availability",
+											"value": "in-stock",
+											"type": "text"
+										},
+										{
+											"key": "orderQuantity",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "minQuantity",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "maxQuantity",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "enableInventory",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "inventory",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "minQuantityThreshold",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "Asperiores facere no,ssdfs,sdf,sd,f,sdf,s,d",
+											"type": "text"
+										},
+										{
+											"key": "labels",
+											"value": "67b2bc3835f5c403e938095c,67b2bc2d35f5c403e9380956",
+											"type": "text"
+										},
+										{
+											"key": "enableOption",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "enOptionName",
+											"value": "English Option",
+											"type": "text"
+										},
+										{
+											"key": "frOptionName",
+											"value": "French Option",
+											"type": "text"
+										},
+										{
+											"key": "optionType",
+											"value": "single",
+											"type": "text"
+										},
+										{
+											"key": "optionRequired",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "variants",
+											"value": "[{ \"enVariantName\": \"Variant Name's (English)\", \"frVariantName\": \"Variant Name (French)\", \"price\": 110, \"costPrice\": 1110 }]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productImages",
+											"type": "file",
+											"src": "/C:/Users/abc/Downloads/pexels-photo-1566837.jpeg",
+											"disabled": true
+										},
+										{
+											"key": "oldImages",
+											"value": "https://document-uploaded.s3.amazonaws.com/product-images/pexels-photo-1566837_20250227T05:29:59_0.jpeg,https://document-uploaded.s3.amazonaws.com/product-images/pexels-photo-1566837_20250227T05:57:00_0.jpeg",
+											"description": "The images URL which you dont want to remove. Each image url will be comma seprated with no space",
+											"type": "text"
+										},
+										{
+											"key": "enName",
+											"value": "Maia Landry",
+											"type": "text"
+										},
+										{
+											"key": "frName",
+											"value": "Jenna Joyner",
+											"type": "text"
+										},
+										{
+											"key": "sku",
+											"value": "KKKKg-KK-k",
+											"type": "text"
+										},
+										{
+											"key": "enDescription",
+											"value": "<p>Rerum suscipit corpo.</p>",
+											"type": "text"
+										},
+										{
+											"key": "frDescription",
+											"value": "<p>Rerum suscipit corpo.</p>",
+											"type": "text"
+										},
+										{
+											"key": "categories",
+											"value": "67ac48cb89d5541dc2a80ab3,67b465e4d1d84d08d40d75c9",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "6.1",
+											"type": "text"
+										},
+										{
+											"key": "costPrice",
+											"value": "1.5",
+											"type": "text"
+										},
+										{
+											"key": "compareAtPrice",
+											"value": "4.8",
+											"type": "text"
+										},
+										{
+											"key": "chargeTax",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "chargeTaxValue",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "in-active",
+											"type": "text"
+										},
+										{
+											"key": "availability",
+											"value": "in-stock",
+											"type": "text"
+										},
+										{
+											"key": "orderQuantity",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "minQuantity",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "maxQuantity",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "enableInventory",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "inventory",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "minQuantityThreshold",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "Asperiores facere no,ssdfs,sdf,sd,f,sdf,s,d",
+											"type": "text"
+										},
+										{
+											"key": "labels",
+											"value": "67b2bc3835f5c403e938095c,67b2bc2d35f5c403e9380956",
+											"type": "text"
+										},
+										{
+											"key": "enableOption",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "enOptionName",
+											"value": "English Option",
+											"type": "text"
+										},
+										{
+											"key": "frOptionName",
+											"value": "French Option",
+											"type": "text"
+										},
+										{
+											"key": "optionType",
+											"value": "multiple",
+											"type": "text"
+										},
+										{
+											"key": "variants",
+											"value": "[\n  {\n    \"variantId\": \"67bf214ae2a941e4f062c653\",\n    \"enVariantName\": \"Variant Name (English)\",\n    \"frVariantName\": \"Variant Name (French)\",\n    \"price\": 110,\n    \"costPrice\": 110\n  },\n {\n    \"enVariantName\": \"Variant Name (English)\",\n    \"frVariantName\": \"Variant Name (French)\",\n    \"price\": 92,\n    \"costPrice\": 44\n  }\n]\n",
+											"type": "text"
+										},
+										{
+											"key": "optionRequired",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "67bf14817757df7df864e0cd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Availibility",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"availability\": \"in-stock\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product/availability/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product",
+										"availability",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "67bf14817757df7df864e0cd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"availability\": \"in-stock\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/product/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"product",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "67b42c68a4597eb4030b3428"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "Get Review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/review",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "Updated Settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderScheduling\": true,\r\n  \"autoAcceptOrder\": false,\r\n  \"displayDeliveryTime\": true,\r\n  \"deliveryType\": \"fixed\",\r\n  \"deliveryTime\": 30,\r\n  \"deliveryFixedCharges\": 30,\r\n  \"storeEmail\": \"hamid1@mailinator.com\",\r\n  \"storePhoneNumber\": \"+12345678901\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/setting",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Updated Store Timings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{merchantAuthToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderScheduling\": true,\r\n    \"timings\": [\r\n        {\r\n            \"day\": \"Monday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"02:00\",\r\n                    \"close\": \"03:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Tuesday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"08:00\",\r\n                    \"close\": \"11:00\"\r\n                },\r\n                {\r\n                    \"open\": \"15:00\",\r\n                    \"close\": \"18:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Wednesday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"09:00\",\r\n                    \"close\": \"12:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Thursday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"10:00\",\r\n                    \"close\": \"13:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Friday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"07:00\",\r\n                    \"close\": \"10:00\"\r\n                },\r\n                {\r\n                    \"open\": \"14:00\",\r\n                    \"close\": \"16:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Saturday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"09:00\",\r\n                    \"close\": \"12:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"day\": \"Sunday\",\r\n            \"shifts\": [\r\n                {\r\n                    \"open\": \"08:00\",\r\n                    \"close\": \"11:00\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/merchant/setting/timings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"merchant",
+										"setting",
+										"timings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
