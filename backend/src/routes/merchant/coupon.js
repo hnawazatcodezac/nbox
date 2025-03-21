@@ -19,7 +19,7 @@ router.get("/", verifyMerchantToken, getCoupons);
 
 router.get(
   "/:couponId/details",
-  verifyAdminToken,
+  verifyMerchantToken,
   paramsValidator("couponParamsSchema"),
   getCouponDetails
 );
