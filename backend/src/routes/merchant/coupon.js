@@ -16,4 +16,12 @@ router.post(
 
 router.get("/", verifyMerchantToken, getCoupons);
 
+router.get(
+  "/:couponId/details",
+  verifyAdminToken,
+  paramsValidator("couponParamsSchema"),
+  getCouponDetails
+);
+
+
 module.exports = router;
