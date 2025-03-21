@@ -14,6 +14,6 @@ router.post(
   createCoupon
 );
 
-router.get("/", verifyAdminToken, getCoupons);
+router.get("/", verifyMerchantToken, getCoupons);
 
 module.exports = router;
